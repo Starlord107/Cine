@@ -1,0 +1,43 @@
+﻿<Window x:Class="Cine.GUI3"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Consulta y Filtro de Películas" Height="450" Width="800">
+    <Grid Margin="10">
+        <!-- Selector de Fecha -->
+        <Label Content="Seleccionar fecha:" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="10,10,0,0"/>
+        <DatePicker Name="DatePickerFecha" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="120,10,0,0"/>
+
+        <!-- Filtros -->
+        <Label Content="Género:" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="10,50,0,0"/>
+        <ComboBox Name="ComboBoxGenero" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="120,50,0,0" Width="150">
+            <ComboBoxItem>Todos</ComboBoxItem>
+            <ComboBoxItem>Acción</ComboBoxItem>
+            <ComboBoxItem>Comedia</ComboBoxItem>
+            <ComboBoxItem>Drama</ComboBoxItem>
+        </ComboBox>
+
+        <Label Content="Idioma:" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="10,90,0,0"/>
+        <ComboBox Name="ComboBoxIdioma" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="120,90,0,0" Width="150">
+            <ComboBoxItem>Todos</ComboBoxItem>
+            <ComboBoxItem>Español</ComboBoxItem>
+            <ComboBoxItem>Inglés</ComboBoxItem>
+            <ComboBoxItem>Francés</ComboBoxItem>
+        </ComboBox>
+
+        <!-- Botones -->
+        <Button Name="ButtonConsultar" Content="Consultar todas las películas del día" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="10,140,0,0" Width="250"/>
+        <Button Name="ButtonAplicarFiltros" Content="Aplicar filtros" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="270,140,0,0" Width="150"/>
+        <Button Name="ButtonLimpiar" Content="Limpiar filtros" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="430,140,0,0" Width="100"/>
+
+        <!-- Tabla de resultados -->
+        <DataGrid Name="DataGridPeliculas" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="10,200,0,0" Height="200" Width="760">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="Título" Binding="{Binding Titulo}" Width="200"/>
+                <DataGridTextColumn Header="Género" Binding="{Binding Genero}" Width="150"/>
+                <DataGridTextColumn Header="Idioma" Binding="{Binding Idioma}" Width="150"/>
+                <DataGridTextColumn Header="Horario" Binding="{Binding Horario}" Width="100"/>
+            </DataGrid.Columns>
+        </DataGrid>
+    </Grid>
+</Window>
+
